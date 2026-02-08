@@ -2,9 +2,11 @@
 
 **A modern, Windows like taskbar for GNOME Shell.**
 
-> **Note:** This project is in early development. Features may be incomplete, unstable, or subject to change.
+![screenshot](https://github.com/user-attachments/assets/3303a297-74d8-4e64-914b-e467ece36527)
 
 Winbar transforms your GNOME desktop with a functional, customizable taskbar featuring a centered layout, a powerful Start Menu, and a unified System Tray.
+
+> **Note:** This project is in early development. Features may be incomplete, unstable, or subject to change.
 
 ## Features
 
