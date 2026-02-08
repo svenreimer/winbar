@@ -288,7 +288,7 @@
         </key>
         
         <key name="task-switcher-current-monitor-only" type="b">
-            <default>true</default>
+            <default>false</default>
             <summary>Current Monitor Only</summary>
             <description>Only show windows from the current monitor in the task switcher</description>
         </key>
