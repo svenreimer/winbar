@@ -1,0 +1,22 @@
+# Compiled GSettings schemas
+schemas/gschemas.compiled
+
+# Editors and IDEs
+.vscode/
+.idea/
+.claude/
+*.swp
+*~
+*.bak
+
+# OS generated files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Build artifacts
+*.zip
+*.tar.gz
+
+# Local configuration (if any)
+local_config.js

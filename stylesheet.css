@@ -1,0 +1,3416 @@
+/**
+ * Winbar - Modern Taskbar Stylesheet
+ * 
+ * This stylesheet provides styles for the Winbar GNOME Shell extension,
+ * with fluent design elements, acrylic blur effects, and smooth animations.
+ */
+
+/* ============================================
+   MAIN PANEL
+   ============================================ */
+
+.winbar-panel {
+    background-color: rgba(32, 32, 32, 0.85);
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.winbar-layout {
+    padding: 0;
+    spacing: 0;
+}
+
+.winbar-left-box {
+    spacing: 2px;
+    padding-left: 8px;
+}
+
+.winbar-center-box {
+    spacing: 2px;
+}
+
+.winbar-right-box {
+    spacing: 2px;
+    padding-right: 0;
+    margin-right: 0;
+}
+
+/* ============================================
+   WIDGETS BUTTON (LEFT - WEATHER)
+   ============================================ */
+
+.winbar-widgets-button {
+    padding: 4px 12px;
+    border-radius: 4px;
+    transition: background-color 150ms ease;
+}
+
+.winbar-widgets-button:hover {
+    background-color: rgba(255, 255, 255, 0.08);
+}
+
+.winbar-widgets-button:active {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.winbar-widgets-box {
+    spacing: 6px;
+}
+
+.winbar-weather-icon {
+    color: -st-accent-color;
+}
+
+.winbar-temp-label {
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+/* Widget Popup */
+.winbar-widget-weather {
+    padding: 16px;
+    min-width: 300px;
+    background-color: rgba(40, 40, 40, 0.95);
+    border-radius: 8px;
+}
+
+.winbar-widget-header {
+    font-size: 14px;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 8px;
+}
+
+.winbar-widget-content {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Widgets Panel - styling applied via inline JS like StartMenu */
+.winbar-widgets-panel {
+    /* Background, border, shadow set via inline style for theme support */
+}
+
+.winbar-widgets-scroll {
+    padding: 0;
+}
+
+.winbar-widgets-content {
+    padding: 0;
+    spacing: 0;
+}
+
+.winbar-widget-card {
+    background-color: transparent;
+    border-radius: 0;
+    padding: 0;
+    border: none;
+}
+
+.winbar-weather-widget {
+    /* No additional styling needed - panel provides the background */
+    background-color: transparent;
+    border-radius: 0;
+    padding: 0;
+    border: none;
+    box-shadow: none;
+}
+
+.winbar-widget-card-header {
+    spacing: 12px;
+    margin-bottom: 8px;
+}
+
+.winbar-widget-card-title {
+    font-size: 13px;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+.winbar-widget-weather-icon {
+    color: -st-accent-color;
+}
+
+.winbar-widget-temp-large {
+    font-size: 28px;
+    font-weight: 300;
+    color: #ffffff;
+}
+
+.winbar-widget-condition {
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.winbar-widget-location {
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.5);
+    margin-top: 6px;
+}
+
+.winbar-widget-hint {
+    font-size: 10px;
+    color: rgba(255, 255, 255, 0.4);
+    font-style: italic;
+    margin-top: 8px;
+}
+
+/* Weather Widget Light Mode */
+.winbar-widgets-panel-light .winbar-widget-card-title {
+    color: #000000;
+}
+
+.winbar-widgets-panel-light .winbar-widget-temp-large {
+    color: #000000;
+}
+
+.winbar-widgets-panel-light .winbar-widget-condition {
+    color: rgba(0, 0, 0, 0.8);
+}
+
+.winbar-widgets-panel-light .winbar-widget-location {
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.winbar-widgets-panel-light .winbar-widget-hint {
+    color: rgba(0, 0, 0, 0.4);
+}
+
+.winbar-widgets-panel-light .winbar-widget-card:hover {
+    background-color: rgba(0, 0, 0, 0.06);
+}
+
+.winbar-widget-card:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Calendar Widget */
+.winbar-widget-calendar-header {
+    margin-bottom: 10px;
+}
+
+.winbar-widget-calendar-nav {
+    padding: 4px 8px;
+    border-radius: 4px;
+}
+
+.winbar-widget-calendar-nav:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.winbar-widget-calendar-month {
+    font-size: 14px;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+.winbar-widget-calendar-days-header {
+    margin-bottom: 6px;
+}
+
+.winbar-widget-calendar-day-name {
+    font-size: 10px;
+    color: rgba(255, 255, 255, 0.5);
+    font-weight: 500;
+}
+
+.winbar-widget-calendar-grid {
+    /* Grid styles */
+}
+
+.winbar-widget-calendar-day {
+    padding: 6px;
+    border-radius: 50%;
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.8);
+    min-width: 28px;
+    min-height: 28px;
+}
+
+.winbar-widget-calendar-day:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.winbar-widget-calendar-today {
+    background-color: -st-accent-color;
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.winbar-widget-calendar-today:hover {
+    background-color: -st-accent-color;
+}
+
+/* Quick Settings Widget */
+.winbar-widget-quick-grid {
+    spacing: 8px;
+    margin-bottom: 12px;
+}
+
+.winbar-widget-quick-toggle {
+    padding: 10px 8px;
+    border-radius: 8px;
+    background-color: rgba(60, 60, 65, 0.8);
+    min-width: 70px;
+}
+
+.winbar-widget-quick-toggle:hover {
+    background-color: rgba(80, 80, 85, 0.8);
+}
+
+.winbar-widget-quick-toggle.active {
+    background-color: -st-accent-color;
+}
+
+.winbar-widget-quick-label {
+    font-size: 9px;
+    color: rgba(255, 255, 255, 0.8);
+    margin-top: 4px;
+}
+
+.winbar-widget-sliders {
+    spacing: 8px;
+}
+
+.winbar-widget-slider-row {
+    spacing: 10px;
+}
+
+.winbar-widget-slider-icon {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* System Widget */
+.winbar-widget-system-buttons {
+    spacing: 10px;
+}
+
+.winbar-widget-system-btn {
+    padding: 12px;
+    border-radius: 8px;
+    background-color: rgba(60, 60, 65, 0.6);
+    min-width: 70px;
+}
+
+.winbar-widget-system-btn:hover {
+    background-color: rgba(80, 80, 85, 0.8);
+}
+
+.winbar-widget-system-label {
+    font-size: 10px;
+    color: rgba(255, 255, 255, 0.8);
+    margin-top: 6px;
+}
+
+/* ============================================
+   START BUTTON
+   ============================================ */
+
+.winbar-start-button {
+    padding: 8px 10px;
+    border-radius: 4px;
+    transition: all 150ms ease;
+}
+
+.winbar-start-button:hover {
+    background-color: rgba(255, 255, 255, 0.08);
+}
+
+.winbar-start-button:active {
+    background-color: rgba(255, 255, 255, 0.05);
+    transform: scale(0.96);
+}
+
+.winbar-start-button.active {
+    background-color: rgba(255, 255, 255, 0.12);
+    border-radius: 4px;
+}
+
+.winbar-start-button.active:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+.winbar-start-button StIcon {
+    color: -st-accent-color;
+}
+
+/* ============================================
+   SEARCH BUTTON
+   ============================================ */
+
+.winbar-search-button {
+    padding: 6px 12px;
+    border-radius: 4px;
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    transition: all 150ms ease;
+    min-width: 200px;
+}
+
+.winbar-search-button.icon-only {
+    min-width: 40px;
+    padding: 6px 10px;
+}
+
+.winbar-search-button:hover {
+    background-color: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.12);
+}
+
+.winbar-search-button:active {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.winbar-search-box {
+    spacing: 8px;
+    x-expand: false;
+}
+
+.winbar-search-icon {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.winbar-search-entry {
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 12px;
+    padding: 0;
+    margin: 0;
+    caret-color: rgba(255, 255, 255, 0.9);
+    min-width: 100px;
+}
+
+.winbar-search-entry:focus {
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+}
+
+.winbar-search-entry StLabel {
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 12px;
+}
+
+.winbar-search-label {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 12px;
+    text-align: left;
+}
+
+/* ============================================
+   TASK VIEW BUTTON
+   ============================================ */
+
+.winbar-taskview-button {
+    padding: 8px 10px;
+    border-radius: 4px;
+    transition: all 150ms ease;
+}
+
+.winbar-taskview-button:hover {
+    background-color: rgba(255, 255, 255, 0.08);
+}
+
+.winbar-taskview-button:active {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.winbar-taskview-button StIcon {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* ============================================
+   SEPARATOR
+   ============================================ */
+
+.winbar-separator {
+    background-color: rgba(255, 255, 255, 0.15);
+    margin: 0 8px;
+}
+
+/* ============================================
+   APP BUTTONS (TASKBAR)
+   ============================================ */
+
+.winbar-app-container {
+    spacing: 2px;
+}
+
+.winbar-taskbar-button {
+    padding: 4px 10px;
+    border-radius: 4px;
+    transition: all 150ms ease;
+    min-width: 44px;
+    min-height: 40px;
+}
+
+.winbar-taskbar-button:hover,
+.winbar-taskbar-button.hover {
+    background-color: rgba(255, 255, 255, 0.08);
+}
+
+.winbar-taskbar-button:active {
+    background-color: rgba(255, 255, 255, 0.05);
+    transform: scale(0.96);
+}
+
+.winbar-taskbar-button.running {
+    background-color: rgba(255, 255, 255, 0.04);
+}
+
+.winbar-taskbar-button.focused {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.winbar-taskbar-button.dragging {
+    opacity: 0.6;
+    background-color: rgba(255, 255, 255, 0.15);
+    border-radius: 4px;
+    transition: none;
+}
+
+.winbar-button-box {
+    spacing: 2px;
+}
+
+/* Tooltip */
+.winbar-tooltip {
+    background-color: rgba(40, 40, 40, 0.95);
+    color: #ffffff;
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 500;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Running Indicator */
+.winbar-running-indicator {
+    background-color: transparent;
+    transition: all 200ms ease;
+}
+
+/* Dot style (default) - bottom position */
+.winbar-running-indicator.indicator-dot.indicator-bottom {
+    width: 0;
+    height: 6px;
+    border-radius: 3px;
+    margin-top: 2px;
+}
+
+.winbar-running-indicator.indicator-dot.indicator-bottom.running {
+    width: 6px;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.winbar-running-indicator.indicator-dot.indicator-bottom.focused {
+    width: 6px;
+    background-color: -st-accent-color;
+}
+
+/* Line style - bottom position */
+.winbar-running-indicator.indicator-line.indicator-bottom {
+    width: 0;
+    height: 3px;
+    border-radius: 2px;
+    margin-top: 2px;
+}
+
+.winbar-running-indicator.indicator-line.indicator-bottom.running {
+    width: 16px;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.winbar-running-indicator.indicator-line.indicator-bottom.focused {
+    width: 24px;
+    background-color: -st-accent-color;
+}
+
+/* Dash style - bottom position */
+.winbar-running-indicator.indicator-dash.indicator-bottom {
+    width: 0;
+    height: 2px;
+    border-radius: 1px;
+    margin-top: 2px;
+}
+
+.winbar-running-indicator.indicator-dash.indicator-bottom.running {
+    width: 12px;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.winbar-running-indicator.indicator-dash.indicator-bottom.focused {
+    width: 12px;
+    background-color: -st-accent-color;
+}
+
+/* Side indicators (left/right) */
+.winbar-running-indicator.indicator-left,
+.winbar-running-indicator.indicator-right {
+    width: 3px;
+    height: 0;
+    border-radius: 2px;
+}
+
+.winbar-running-indicator.indicator-left.running,
+.winbar-running-indicator.indicator-right.running {
+    height: 16px;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.winbar-running-indicator.indicator-left.focused,
+.winbar-running-indicator.indicator-right.focused {
+    height: 24px;
+    background-color: -st-accent-color;
+}
+
+/* Top indicator */
+.winbar-running-indicator.indicator-top {
+    width: 0;
+    height: 3px;
+    border-radius: 2px;
+    margin-bottom: 2px;
+}
+
+.winbar-running-indicator.indicator-top.running {
+    width: 16px;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.winbar-running-indicator.indicator-top.focused {
+    width: 24px;
+    background-color: -st-accent-color;
+}
+
+/* Indicator container box */
+.winbar-indicator-box {
+    spacing: 0;
+}
+
+.winbar-indicator-box.multi-window {
+    spacing: 3px;
+}
+
+/* Multi-window dot style - bottom */
+.winbar-running-indicator.indicator-dot.indicator-bottom.running.multi-window,
+.winbar-running-indicator.indicator-dot.indicator-bottom.focused.multi-window {
+    width: 4px;
+    height: 4px;
+    border-radius: 2px;
+}
+
+/* Multi-window line style - bottom */
+.winbar-running-indicator.indicator-line.indicator-bottom.running.multi-window {
+    width: 10px;
+}
+
+.winbar-running-indicator.indicator-line.indicator-bottom.focused.multi-window {
+    width: 14px;
+}
+
+/* Multi-window dash style - bottom */
+.winbar-running-indicator.indicator-dash.indicator-bottom.running.multi-window {
+    width: 8px;
+}
+
+.winbar-running-indicator.indicator-dash.indicator-bottom.focused.multi-window {
+    width: 8px;
+}
+
+/* Multi-window side indicators (left/right) */
+.winbar-running-indicator.indicator-left.running.multi-window,
+.winbar-running-indicator.indicator-right.running.multi-window {
+    height: 10px;
+}
+
+.winbar-running-indicator.indicator-left.focused.multi-window,
+.winbar-running-indicator.indicator-right.focused.multi-window {
+    height: 14px;
+}
+
+/* Multi-window top indicator */
+.winbar-running-indicator.indicator-top.running.multi-window {
+    width: 10px;
+}
+
+.winbar-running-indicator.indicator-top.focused.multi-window {
+    width: 14px;
+}
+
+/* ============================================
+   WINDOW PREVIEW
+   ============================================ */
+
+.winbar-preview-menu {
+    background-color: rgba(32, 32, 32, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 8px;
+    padding: 8px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+.winbar-window-preview {
+    background-color: rgba(255, 255, 255, 0.03);
+    border-radius: 6px;
+    padding: 8px;
+    transition: all 150ms ease;
+}
+
+.winbar-window-preview:hover {
+    background-color: rgba(255, 255, 255, 0.08);
+}
+
+.winbar-preview-box {
+    spacing: 6px;
+}
+
+.winbar-preview-titlebar {
+    spacing: 8px;
+}
+
+.winbar-preview-title {
+    color: #ffffff;
+    font-size: 11px;
+    font-weight: 500;
+    max-width: 180px;
+}
+
+.winbar-preview-close {
+    padding: 2px;
+    border-radius: 4px;
+    transition: background-color 150ms ease;
+}
+
+.winbar-preview-close:hover {
+    background-color: #c42b1c;
+}
+
+.winbar-preview-close StIcon {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.winbar-preview-thumbnail {
+    border-radius: 4px;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+/* ============================================
+   SYSTEM TRAY
+   ============================================ */
+
+.winbar-system-tray {
+    spacing: 0;
+    padding: 4px;
+    border-radius: 4px;
+}
+
+.winbar-system-tray:hover {
+    background-color: rgba(255, 255, 255, 0.06);
+}
+
+.winbar-tray-chevron {
+    padding: 4px;
+    border-radius: 4px;
+}
+
+.winbar-tray-chevron:hover {
+    background-color: rgba(255, 255, 255, 0.08);
+}
+
+.winbar-tray-chevron StIcon {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.winbar-tray-icons {
+    spacing: 4px;
+    padding: 0 4px;
+}
+
+.winbar-tray-icon {
+    padding: 6px;
+    border-radius: 4px;
+    transition: background-color 150ms ease;
+}
+
+.winbar-tray-icon:hover {
+    background-color: rgba(255, 255, 255, 0.08);
+}
+
+.winbar-tray-icon StIcon {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.winbar-hidden-icons {
+    background-color: rgba(32, 32, 32, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 8px;
+    padding: 8px;
+}
+
+/* AppIndicator Icons */
+.winbar-appindicator-icons {
+    spacing: 4px;
+    padding: 0 2px;
+}
+
+.winbar-appindicator-icon,
+.winbar-hijacked-tray-item {
+    padding: 4px;
+    border-radius: 4px;
+    transition: background-color 150ms ease;
+}
+
+.winbar-appindicator-icon:hover,
+.winbar-hijacked-tray-item:hover {
+    background-color: rgba(255, 255, 255, 0.08);
+}
+
+.winbar-appindicator-icon:active,
+.winbar-hijacked-tray-item:active {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.winbar-appindicator-icon StIcon,
+.winbar-hijacked-tray-item StIcon {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* Legacy Tray Icons (Wine/Lutris XEmbed icons) */
+.winbar-legacy-tray-icon {
+    padding: 2px;
+}
+
+.winbar-legacy-tray-icon>* {
+    /* Ensure proper icon sizing for XEmbed icons */
+    width: 16px;
+    height: 16px;
+}
+
+/* Lutris Tray Window Embed (Wayland Wine tray icons) */
+.winbar-lutris-tray-embed {
+    padding: 2px;
+    border-radius: 4px;
+}
+
+.winbar-lutris-tray-embed:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Hidden Icons Popup */
+.winbar-hidden-icons-popup {
+    background-color: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    -arrow-rise: 0;
+    -arrow-base: 0;
+}
+
+.winbar-hidden-icons-popup .popup-menu-content {
+    background-color: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0;
+    margin: 0;
+}
+
+.winbar-hidden-icons-menu-item {
+    padding: 0;
+    background-color: transparent;
+    border: none;
+}
+
+.winbar-hidden-icons-menu-item:focus,
+.winbar-hidden-icons-menu-item:hover,
+.winbar-hidden-icons-menu-item:active {
+    background-color: transparent;
+}
+
+.winbar-hidden-icons-box {
+    padding: 8px 12px;
+    spacing: 4px;
+    background-color: rgba(32, 32, 32, 0.95);
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+}
+
+/* AppIndicator Context Menu */
+.winbar-appindicator-menu {
+    background-color: rgba(32, 32, 32, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 8px;
+    padding: 6px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+}
+
+.winbar-appindicator-menu .popup-menu-item {
+    padding: 8px 12px;
+    border-radius: 4px;
+    color: #ffffff;
+    font-size: 12px;
+}
+
+.winbar-appindicator-menu .popup-menu-item:hover,
+.winbar-appindicator-menu .popup-menu-item:focus {
+    background-color: rgba(255, 255, 255, 0.08);
+}
+
+.winbar-appindicator-menu .popup-menu-item:active {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.winbar-appindicator-menu .popup-separator-menu-item {
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.1);
+    margin: 4px 8px;
+}
+
+.winbar-appindicator-menu .popup-sub-menu {
+    background-color: transparent;
+}
+
+.winbar-appindicator-menu .popup-menu-item:insensitive {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+/* ============================================
+   CLOCK
+   ============================================ */
+
+.winbar-clock-button {
+    padding: 4px 12px;
+    border-radius: 4px;
+    transition: background-color 150ms ease;
+}
+
+.winbar-clock-button:hover {
+    background-color: rgba(255, 255, 255, 0.08);
+}
+
+.winbar-clock-box {
+    spacing: 0;
+}
+
+.winbar-time-label {
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 500;
+    font-feature-settings: "tnum";
+}
+
+.winbar-date-label {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 11px;
+    font-feature-settings: "tnum";
+}
+
+/* ============================================
+   NOTIFICATION BUTTON
+   ============================================ */
+
+.winbar-notification-button {
+    padding: 6px 10px;
+    border-radius: 4px;
+    transition: background-color 150ms ease;
+}
+
+.winbar-notification-button:hover {
+    background-color: rgba(255, 255, 255, 0.08);
+}
+
+.winbar-notification-box {
+    spacing: 4px;
+}
+
+.winbar-notification-button StIcon {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.winbar-notification-badge {
+    background-color: -st-accent-color;
+    color: #ffffff;
+    font-size: 9px;
+    font-weight: 600;
+    padding: 1px 4px;
+    border-radius: 8px;
+    min-width: 14px;
+}
+
+/* ============================================
+   SHOW DESKTOP BUTTON
+   ============================================ */
+
+.winbar-show-desktop {
+    background-color: transparent;
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
+    transition: background-color 150ms ease;
+    margin-left: 4px;
+    margin-right: 0;
+    padding-right: 0;
+}
+
+.winbar-show-desktop:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+/* ============================================
+   CONTEXT MENUS (Winbar specific only)
+   ============================================ */
+
+/* Only style popup menus that are children of winbar elements */
+.winbar-panel .popup-menu:not(.winbar-qs-popup-container),
+.winbar-taskbar-button .popup-menu,
+.winbar-preview-menu {
+    background-color: rgba(32, 32, 32, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 8px;
+    padding: 4px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+.winbar-panel .popup-menu-item,
+.winbar-taskbar-button .popup-menu-item {
+    padding: 8px 12px;
+    border-radius: 4px;
+    color: #ffffff;
+    font-size: 12px;
+    text-align: left;
+}
+
+.winbar-panel .popup-menu-item StLabel,
+.winbar-taskbar-button .popup-menu-item StLabel {
+    text-align: left;
+    x-align: start;
+}
+
+.winbar-panel .popup-menu-item:hover,
+.winbar-panel .popup-menu-item:focus,
+.winbar-taskbar-button .popup-menu-item:hover,
+.winbar-taskbar-button .popup-menu-item:focus {
+    background-color: rgba(255, 255, 255, 0.08);
+}
+
+.winbar-panel .popup-menu-item:active,
+.winbar-taskbar-button .popup-menu-item:active {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.winbar-panel .popup-separator-menu-item,
+.winbar-taskbar-button .popup-separator-menu-item {
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.1);
+    margin: 4px 8px;
+}
+
+/* Light mode popup overrides */
+.popup-menu.winbar-popup-light {
+    background-color: rgba(243, 243, 243, 0.95) !important;
+    border: 1px solid rgba(0, 0, 0, 0.08) !important;
+}
+
+.popup-menu.winbar-popup-light .popup-menu-item {
+    color: #000000 !important;
+}
+
+.popup-menu.winbar-popup-light .popup-menu-item:hover,
+.popup-menu.winbar-popup-light .popup-menu-item:focus {
+    background-color: rgba(0, 0, 0, 0.05) !important;
+}
+
+.popup-menu.winbar-popup-light .popup-menu-item:active {
+    background-color: rgba(0, 0, 0, 0.03) !important;
+}
+
+.popup-menu.winbar-popup-light .popup-separator-menu-item {
+    background-color: rgba(0, 0, 0, 0.1) !important;
+}
+
+/* ============================================
+   LIGHT THEME OVERRIDES
+   ============================================ */
+
+.winbar-panel.light {
+    background-color: rgba(243, 243, 243, 0.85);
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+/* Start button - light mode */
+.winbar-panel.light .winbar-start-button:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.winbar-panel.light .winbar-start-button:active {
+    background-color: rgba(0, 0, 0, 0.03);
+}
+
+.winbar-panel.light .winbar-start-button.active {
+    background-color: rgba(0, 0, 0, 0.08);
+}
+
+.winbar-panel.light .winbar-start-button.active:hover {
+    background-color: rgba(0, 0, 0, 0.10);
+}
+
+/* Search button - light mode */
+.winbar-panel.light .winbar-search-button {
+    background-color: rgba(0, 0, 0, 0.03);
+    border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.winbar-panel.light .winbar-search-button:hover {
+    background-color: rgba(0, 0, 0, 0.06);
+    border-color: rgba(0, 0, 0, 0.10);
+}
+
+.winbar-panel.light .winbar-search-button:active {
+    background-color: rgba(0, 0, 0, 0.03);
+}
+
+.winbar-panel.light .winbar-search-icon {
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.winbar-panel.light .winbar-search-entry {
+    color: rgba(0, 0, 0, 0.9);
+    caret-color: rgba(0, 0, 0, 0.9);
+}
+
+.winbar-panel.light .winbar-search-entry StLabel {
+    color: rgba(0, 0, 0, 0.4);
+}
+
+.winbar-panel.light .winbar-search-label {
+    color: rgba(0, 0, 0, 0.5);
+}
+
+/* Task view button - light mode */
+.winbar-panel.light .winbar-taskview-button:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.winbar-panel.light .winbar-taskview-button:active {
+    background-color: rgba(0, 0, 0, 0.03);
+}
+
+.winbar-panel.light .winbar-taskview-button StIcon {
+    color: rgba(0, 0, 0, 0.9);
+}
+
+/* Taskbar buttons - light mode */
+.winbar-panel.light .winbar-taskbar-button:hover,
+.winbar-panel.light .winbar-taskbar-button.hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.winbar-panel.light .winbar-taskbar-button:active {
+    background-color: rgba(0, 0, 0, 0.03);
+}
+
+.winbar-panel.light .winbar-taskbar-button.running {
+    background-color: rgba(0, 0, 0, 0.02);
+}
+
+.winbar-panel.light .winbar-taskbar-button.focused {
+    background-color: rgba(0, 0, 0, 0.08);
+}
+
+.winbar-panel.light .winbar-taskbar-button.dragging {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+/* Running indicator - light mode */
+.winbar-panel.light .winbar-running-indicator.running {
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.winbar-panel.light .winbar-running-indicator.focused {
+    background-color: -st-accent-color;
+}
+
+/* Tooltip - light mode */
+.winbar-panel.light .winbar-tooltip {
+    background-color: rgba(255, 255, 255, 0.95);
+    color: #000000;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* System tray - light mode */
+.winbar-panel.light .winbar-system-tray:hover {
+    background-color: rgba(0, 0, 0, 0.04);
+}
+
+.winbar-panel.light .winbar-tray-chevron:hover {
+    background-color: rgba(0, 0, 0, 0.06);
+}
+
+.winbar-panel.light .winbar-tray-chevron StIcon {
+    color: rgba(0, 0, 0, 0.7);
+}
+
+.winbar-panel.light .winbar-tray-icon:hover {
+    background-color: rgba(0, 0, 0, 0.06);
+}
+
+.winbar-panel.light .winbar-tray-icon StIcon {
+    color: rgba(0, 0, 0, 0.8);
+}
+
+.winbar-panel.light .winbar-tray-icon-widget {
+    color: rgba(0, 0, 0, 0.8);
+}
+
+/* AppIndicator icons - light mode */
+.winbar-panel.light .winbar-appindicator-icon:hover {
+    background-color: rgba(0, 0, 0, 0.06);
+}
+
+.winbar-panel.light .winbar-appindicator-icon:active {
+    background-color: rgba(0, 0, 0, 0.03);
+}
+
+.winbar-panel.light .winbar-appindicator-icon StIcon {
+    color: rgba(0, 0, 0, 0.8);
+}
+
+/* Hidden icons popup - light mode */
+.winbar-hidden-icons-box-light {
+    background-color: rgba(243, 243, 243, 0.95);
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Clock - light mode */
+.winbar-panel.light .winbar-clock-button:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.winbar-panel.light .winbar-time-label {
+    color: #000000;
+}
+
+.winbar-panel.light .winbar-date-label {
+    color: rgba(0, 0, 0, 0.7);
+}
+
+/* Notification button - light mode */
+.winbar-panel.light .winbar-notification-button:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.winbar-panel.light .winbar-notification-button StIcon {
+    color: rgba(0, 0, 0, 0.9);
+}
+
+/* Show desktop button - light mode */
+.winbar-panel.light .winbar-show-desktop {
+    border-left: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.winbar-panel.light .winbar-show-desktop:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+/* Widgets button - light mode */
+.winbar-panel.light .winbar-widgets-button:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.winbar-panel.light .winbar-widgets-button:active {
+    background-color: rgba(0, 0, 0, 0.03);
+}
+
+.winbar-panel.light .winbar-weather-icon {
+    color: -st-accent-color;
+}
+
+.winbar-panel.light .winbar-temp-label {
+    color: #000000;
+}
+
+/* Separator - light mode */
+.winbar-panel.light .winbar-separator {
+    background-color: rgba(0, 0, 0, 0.12);
+}
+
+/* Window preview - light mode */
+.winbar-panel.light .winbar-preview-menu {
+    background-color: rgba(255, 255, 255, 0.95);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+.winbar-panel.light .winbar-window-preview {
+    background-color: rgba(0, 0, 0, 0.02);
+}
+
+.winbar-panel.light .winbar-window-preview:hover {
+    background-color: rgba(0, 0, 0, 0.06);
+}
+
+.winbar-panel.light .winbar-preview-title {
+    color: #000000;
+}
+
+.winbar-panel.light .winbar-preview-close:hover {
+    background-color: #c42b1c;
+}
+
+.winbar-panel.light .winbar-preview-thumbnail {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+/* Window preview menu light mode (for chrome popups) */
+.winbar-preview-menu-light .winbar-window-preview {
+    background-color: rgba(0, 0, 0, 0.02) !important;
+}
+
+.winbar-preview-menu-light .winbar-window-preview:hover {
+    background-color: rgba(0, 0, 0, 0.06) !important;
+}
+
+.winbar-preview-menu-light .winbar-preview-title {
+    color: #000000 !important;
+}
+
+.winbar-preview-menu-light .winbar-preview-close StIcon {
+    color: rgba(0, 0, 0, 0.7) !important;
+}
+
+.winbar-preview-menu-light .winbar-preview-close:hover {
+    background-color: #c42b1c !important;
+}
+
+.winbar-preview-menu-light .winbar-preview-close:hover StIcon {
+    color: #ffffff !important;
+}
+
+.winbar-preview-menu-light .winbar-preview-thumbnail {
+    background-color: rgba(0, 0, 0, 0.05) !important;
+}
+
+/* ============================================
+   ANIMATIONS
+   ============================================ */
+
+@keyframes pulse {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.6;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.winbar-notification-badge.unread {
+    animation: pulse 2s infinite;
+}
+
+/* ============================================
+   RESPONSIVE ADJUSTMENTS
+   ============================================ */
+
+/* Small screens */
+@media (max-width: 1366px) {
+    .winbar-search-button {
+        min-width: 150px;
+    }
+
+    .winbar-search-label {
+        display: none;
+    }
+}
+
+/* Very small screens */
+@media (max-width: 1024px) {
+    .winbar-search-button {
+        min-width: auto;
+        padding: 6px 10px;
+    }
+
+    .winbar-widgets-button .winbar-temp-label {
+        display: none;
+    }
+}
+
+/* ============================================
+   ACCESSIBILITY
+   ============================================ */
+
+.winbar-taskbar-button:focus {
+    outline: 2px solid -st-accent-color;
+    outline-offset: -2px;
+}
+
+.winbar-search-button:focus,
+.winbar-clock-button:focus,
+.winbar-start-button:focus {
+    outline: 2px solid -st-accent-color;
+    outline-offset: -2px;
+}
+
+/* ============================================
+   POPUP MENUS (BOTTOM PANEL)
+   ============================================ */
+
+/* Calendar Popup Styles */
+.winbar-calendar-menu-item {
+    padding: 0;
+    background-color: transparent;
+    border: none;
+}
+
+.winbar-calendar-menu-item:focus,
+.winbar-calendar-menu-item:hover,
+.winbar-calendar-menu-item:active {
+    background-color: transparent;
+}
+
+/* Notification Popup Menu Item */
+.winbar-notification-menu-item {
+    padding: 0;
+    background-color: transparent;
+    border: none;
+}
+
+.winbar-notification-menu-item:focus,
+.winbar-notification-menu-item:hover,
+.winbar-notification-menu-item:active {
+    background-color: transparent;
+}
+
+.winbar-calendar-popup {
+    padding: 16px;
+    min-width: 320px;
+    spacing: 8px;
+    /* Background set via inline JS for theme support, fallback here */
+    background-color: rgba(32, 32, 32, 0.95);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+}
+
+.winbar-calendar-header {
+    padding-bottom: 12px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    margin-bottom: 8px;
+}
+
+.winbar-calendar-header-date {
+    font-size: 16px;
+    font-weight: 500;
+    color: #ffffff;
+}
+
+.winbar-calendar-expand-btn {
+    padding: 4px 8px;
+    border-radius: 4px;
+}
+
+.winbar-calendar-expand-btn:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.winbar-calendar-month-nav {
+    padding: 8px 0;
+}
+
+.winbar-calendar-month-label {
+    font-size: 14px;
+    font-weight: 500;
+    color: #ffffff;
+}
+
+.winbar-calendar-nav-buttons {
+    spacing: 4px;
+}
+
+.winbar-calendar-nav-btn {
+    padding: 4px 8px;
+    border-radius: 4px;
+}
+
+.winbar-calendar-nav-btn:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.winbar-calendar-weekdays {
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.winbar-calendar-weekday {
+    font-size: 12px;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.6);
+    min-width: 36px;
+}
+
+.winbar-calendar-grid {
+    spacing: 2px;
+    padding: 8px 0;
+}
+
+.winbar-calendar-week {
+    spacing: 2px;
+}
+
+.winbar-calendar-day {
+    min-width: 36px;
+    min-height: 36px;
+    border-radius: 50%;
+    font-size: 13px;
+    color: #ffffff;
+    transition: background-color 150ms ease;
+}
+
+.winbar-calendar-day:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.winbar-calendar-day.other-month {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.winbar-calendar-day.today {
+    background-color: -st-accent-color;
+    color: #000000;
+    font-weight: 600;
+}
+
+.winbar-calendar-day.today:hover {
+    background-color: st-lighten(-st-accent-color, 10%);
+}
+
+.winbar-calendar-section {
+    /* Collapsible section containing month nav, weekdays, and grid */
+}
+
+/* Calendar Popup Light Mode */
+.winbar-calendar-popup-light {
+    background-color: rgba(250, 250, 250, 0.95);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2), inset 0 0 0 1px rgba(0, 0, 0, 0.05);
+}
+
+.winbar-calendar-popup-light .winbar-calendar-header {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.winbar-calendar-popup-light .winbar-calendar-header-date {
+    color: #000000;
+}
+
+.winbar-calendar-popup-light .winbar-calendar-expand-btn:hover {
+    background-color: rgba(0, 0, 0, 0.08);
+}
+
+.winbar-calendar-popup-light .winbar-calendar-expand-btn StIcon {
+    color: rgba(0, 0, 0, 0.7);
+}
+
+.winbar-calendar-popup-light .winbar-calendar-month-label {
+    color: #000000;
+}
+
+.winbar-calendar-popup-light .winbar-calendar-nav-btn:hover {
+    background-color: rgba(0, 0, 0, 0.08);
+}
+
+.winbar-calendar-popup-light .winbar-calendar-nav-btn StIcon {
+    color: rgba(0, 0, 0, 0.7);
+}
+
+.winbar-calendar-popup-light .winbar-calendar-weekdays {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.winbar-calendar-popup-light .winbar-calendar-weekday {
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.winbar-calendar-popup-light .winbar-calendar-day {
+    color: #000000;
+}
+
+.winbar-calendar-popup-light .winbar-calendar-day:hover {
+    background-color: rgba(0, 0, 0, 0.08);
+}
+
+.winbar-calendar-popup-light .winbar-calendar-day.other-month {
+    color: rgba(0, 0, 0, 0.4);
+}
+
+.winbar-calendar-popup-light .winbar-calendar-day.today {
+    background-color: -st-accent-color;
+    color: #ffffff;
+}
+
+.winbar-calendar-popup-light .winbar-calendar-day.today:hover {
+    background-color: st-lighten(-st-accent-color, 10%);
+}
+
+.winbar-notification-popup {
+    padding: 16px;
+    min-width: 300px;
+    /* Background set via inline JS for theme support, fallback here */
+    background-color: rgba(32, 32, 32, 0.95);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+}
+
+.winbar-notification-empty {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 12px;
+}
+
+/* Notification Popup Light Mode */
+.winbar-notification-popup-light {
+    background-color: rgba(250, 250, 250, 0.95);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2), inset 0 0 0 1px rgba(0, 0, 0, 0.05);
+}
+
+.winbar-notification-popup-light .winbar-notification-empty {
+    color: rgba(0, 0, 0, 0.6);
+}
+
+/* Calendar popup container - remove default popup styling */
+.winbar-calendar-popup-container {
+    background-color: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    -arrow-rise: 0;
+    -arrow-base: 0;
+    -arrow-border-radius: 0;
+    -arrow-background-color: transparent !important;
+    -arrow-border-width: 0;
+    -arrow-border-color: transparent !important;
+}
+
+.winbar-calendar-popup-container .popup-menu-boxpointer {
+    background-color: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    -arrow-rise: 0;
+    -arrow-base: 0;
+    -arrow-border-radius: 0;
+    -arrow-background-color: transparent !important;
+}
+
+.winbar-calendar-popup-container .popup-menu-content {
+    background-color: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    padding: 0;
+    margin: 0;
+}
+
+.winbar-calendar-popup-container .popup-menu-item {
+    background-color: transparent !important;
+    border: none !important;
+    border-radius: 0 !important;
+    padding: 0;
+    margin: 0;
+}
+
+.winbar-calendar-popup-container .popup-menu-item:hover,
+.winbar-calendar-popup-container .popup-menu-item:focus,
+.winbar-calendar-popup-container .popup-menu-item:active {
+    background-color: transparent !important;
+    border: none !important;
+}
+
+/* Notification popup container - remove default popup styling */
+.winbar-notification-popup-container {
+    background-color: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    -arrow-rise: 0;
+    -arrow-base: 0;
+    -arrow-border-radius: 0;
+    -arrow-background-color: transparent !important;
+    -arrow-border-width: 0;
+    -arrow-border-color: transparent !important;
+}
+
+.winbar-notification-popup-container .popup-menu-boxpointer {
+    background-color: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    -arrow-rise: 0;
+    -arrow-base: 0;
+    -arrow-border-radius: 0;
+    -arrow-background-color: transparent !important;
+}
+
+.winbar-notification-popup-container .popup-menu-content {
+    background-color: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    padding: 0;
+    margin: 0;
+}
+
+.winbar-notification-popup-container .popup-menu-item {
+    background-color: transparent !important;
+    border: none !important;
+    border-radius: 0 !important;
+    padding: 0;
+    margin: 0;
+}
+
+.winbar-notification-popup-container .popup-menu-item:hover,
+.winbar-notification-popup-container .popup-menu-item:focus,
+.winbar-notification-popup-container .popup-menu-item:active {
+    background-color: transparent !important;
+    border: none !important;
+}
+
+/* Quick settings popup container - remove default popup styling */
+.winbar-qs-popup-container {
+    background-color: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    -arrow-rise: 0;
+    -arrow-base: 0;
+    -arrow-border-radius: 0;
+    -arrow-background-color: transparent !important;
+    -arrow-border-width: 0;
+    -arrow-border-color: transparent !important;
+}
+
+.winbar-qs-popup-container .popup-menu-boxpointer {
+    background-color: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    -arrow-rise: 0;
+    -arrow-base: 0;
+    -arrow-border-radius: 0;
+    -arrow-background-color: transparent !important;
+}
+
+.winbar-qs-popup-container .popup-menu-content {
+    background-color: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    padding: 0;
+    margin: 0;
+}
+
+/* Quick Settings Menu Item */
+.winbar-qs-menu-item {
+    padding: 0;
+    background-color: transparent;
+    border: none;
+}
+
+.winbar-qs-menu-item:focus,
+.winbar-qs-menu-item:hover,
+.winbar-qs-menu-item:active {
+    background-color: transparent;
+}
+
+.winbar-quick-settings-popup {
+    padding: 20px;
+    min-width: 380px;
+    spacing: 12px;
+    /* Background set via inline JS for theme support, fallback here */
+    background-color: rgba(32, 32, 32, 0.95);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+}
+
+/* Toggle tile row */
+.winbar-qs-row {
+    spacing: 10px;
+}
+
+/* Individual toggle tile container */
+.winbar-qs-tile {
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.06);
+    min-height: 72px;
+    min-width: 110px;
+    border: none;
+}
+
+.winbar-qs-tile:hover {
+    background-color: rgba(255, 255, 255, 0.10);
+}
+
+/* Main button part of tile (icon + label) */
+.winbar-qs-tile-main {
+    padding: 12px;
+    border-radius: 8px;
+    spacing: 8px;
+}
+
+.winbar-qs-tile-main:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.winbar-qs-tile-main.active {
+    background-color: -st-accent-color;
+    border-radius: 8px;
+}
+
+.winbar-qs-tile-main.active:hover {
+    background-color: st-lighten(-st-accent-color, 10%);
+}
+
+/* When tile has an arrow button, adjust main button corners */
+.winbar-qs-tile-main.has-arrow {
+    border-radius: 8px 0 0 8px;
+}
+
+.winbar-qs-tile-main.has-arrow.active {
+    border-radius: 8px 0 0 8px;
+}
+
+/* Toggle tile icon */
+.winbar-qs-tile-icon {
+    icon-size: 24px;
+    color: rgba(255, 255, 255, 0.95);
+    margin-bottom: 8px;
+}
+
+.winbar-qs-tile-main StIcon {
+    icon-size: 24px;
+    color: rgba(255, 255, 255, 0.95);
+}
+
+.winbar-qs-tile-main.active StIcon {
+    color: rgba(0, 0, 0, 0.9);
+}
+
+.winbar-qs-tile-label {
+    font-size: 11px;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.95);
+    margin-top: 6px;
+}
+
+.winbar-qs-tile-main.active .winbar-qs-tile-label {
+    color: rgba(0, 0, 0, 0.9);
+}
+
+/* Unavailable/disabled toggle state */
+.winbar-qs-tile.unavailable {
+    opacity: 0.4;
+}
+
+.winbar-qs-tile.unavailable .winbar-qs-tile-main {
+    background-color: rgba(255, 255, 255, 0.03);
+}
+
+.winbar-qs-tile.unavailable .winbar-qs-tile-main:hover {
+    background-color: rgba(255, 255, 255, 0.03);
+}
+
+/* Arrow button for expandable tiles */
+.winbar-qs-tile-arrow {
+    padding: 10px 12px;
+    border-radius: 0 8px 8px 0;
+    border-left: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.winbar-qs-tile-arrow:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.winbar-qs-tile-main.active+.winbar-qs-tile-arrow {
+    border-left-color: rgba(0, 0, 0, 0.15);
+}
+
+.winbar-qs-tile-main.active+.winbar-qs-tile-arrow:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.winbar-qs-tile-arrow StIcon {
+    icon-size: 14px;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.winbar-qs-tile-main.active+.winbar-qs-tile-arrow StIcon {
+    color: rgba(0, 0, 0, 0.6);
+}
+
+/* Slider section */
+.winbar-qs-slider-box {
+    spacing: 12px;
+    padding: 12px 8px;
+    margin-top: 4px;
+}
+
+.winbar-qs-volume-btn {
+    padding: 6px;
+    border-radius: 6px;
+}
+
+.winbar-qs-volume-btn:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.winbar-qs-volume-btn StIcon {
+    icon-size: 20px;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.winbar-qs-slider-icon {
+    color: rgba(255, 255, 255, 0.9);
+    icon-size: 20px;
+}
+
+.winbar-qs-slider {
+    height: 24px;
+    min-width: 240px;
+    -barlevel-height: 6px;
+    -barlevel-background-color: rgba(255, 255, 255, 0.15);
+    -barlevel-active-background-color: rgba(96, 205, 255, 1);
+    -barlevel-overdrive-color: #ff6b6b;
+    -barlevel-border-width: 0;
+    -barlevel-border-color: transparent;
+    -barlevel-border-radius: 3px;
+    border-radius: 3px;
+}
+
+.winbar-qs-slider:hover {
+    -barlevel-background-color: rgba(255, 255, 255, 0.2);
+}
+
+.winbar-qs-slider-settings {
+    padding: 6px;
+    border-radius: 6px;
+}
+
+.winbar-qs-slider-settings:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.winbar-qs-slider-settings StIcon {
+    color: rgba(255, 255, 255, 0.5);
+    icon-size: 18px;
+}
+
+/* Bottom row */
+.winbar-qs-bottom-row {
+    spacing: 8px;
+    padding: 12px 8px 4px 8px;
+    margin-top: 8px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.winbar-qs-battery {
+    spacing: 6px;
+}
+
+.winbar-qs-battery StIcon {
+    color: rgba(255, 255, 255, 0.9);
+    icon-size: 18px;
+}
+
+.winbar-qs-battery-label {
+    font-size: 13px;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.winbar-qs-action-btn {
+    padding: 10px;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.winbar-qs-action-btn:hover {
+    background-color: rgba(255, 255, 255, 0.12);
+}
+
+.winbar-qs-action-btn StIcon {
+    color: rgba(255, 255, 255, 0.9);
+    icon-size: 18px;
+}
+
+.winbar-tray-box {
+    spacing: 0;
+}
+
+.winbar-tray-icon-widget {
+    color: rgba(255, 255, 255, 0.9);
+    padding: 0 4px;
+}
+
+/* High Contrast Mode */
+@media (prefers-contrast: high) {
+    .winbar-panel {
+        background-color: #000000;
+        border-top: 2px solid #ffffff;
+    }
+
+    .winbar-taskbar-button:hover {
+        background-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .winbar-running-indicator.focused {
+        background-color: #ffffff;
+    }
+}
+
+/* Disable Animations */
+.winbar-no-animations .winbar-taskbar-button,
+.winbar-no-animations .winbar-search-button,
+.winbar-no-animations .winbar-clock-button,
+.winbar-no-animations .winbar-tray-icon,
+.winbar-no-animations .winbar-running-indicator,
+.winbar-no-animations .winbar-start-button {
+    transition: none !important;
+    animation: none !important;
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+
+    .winbar-taskbar-button,
+    .winbar-search-button,
+    .winbar-clock-button,
+    .winbar-tray-icon {
+        transition: none;
+    }
+
+    .winbar-notification-badge.unread {
+        animation: none;
+    }
+}
+
+/* ============================================
+   START MENU
+   ============================================ */
+
+.winbar-start-menu {
+    /* Full screen overlay for click-outside detection */
+}
+
+.winbar-start-menu-container {
+    background-color: rgba(28, 28, 28, 0.78);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5), inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+    padding: 20px;
+    min-width: 600px;
+    height: 640px;
+}
+
+/* Light mode overrides - applied via JS when theme is light */
+.winbar-start-menu-light .winbar-start-section-title,
+.winbar-start-menu-light .winbar-start-app-label,
+.winbar-start-menu-light .winbar-start-recommended-name,
+.winbar-start-menu-light .winbar-start-app-row-label,
+.winbar-start-menu-light .winbar-start-user-name {
+    color: #000000 !important;
+}
+
+.winbar-start-menu-light .winbar-start-section-button StLabel,
+.winbar-start-menu-light .winbar-start-recommended-time,
+.winbar-start-menu-light .winbar-start-recommended-placeholder,
+.winbar-start-menu-light .winbar-start-user-host,
+.winbar-start-menu-light .winbar-start-section-button StIcon {
+    color: rgba(0, 0, 0, 0.6) !important;
+}
+
+.winbar-start-menu-light .winbar-start-app-button:hover,
+.winbar-start-menu-light .winbar-start-recommended-item:hover,
+.winbar-start-menu-light .winbar-start-app-row:hover,
+.winbar-start-menu-light .winbar-start-user-button:hover,
+.winbar-start-menu-light .winbar-start-power-button:hover,
+.winbar-start-menu-light .winbar-start-section-button:hover {
+    background-color: rgba(0, 0, 0, 0.05) !important;
+}
+
+.winbar-start-menu-light .winbar-start-app-button:active,
+.winbar-start-menu-light .winbar-start-section-button:active {
+    background-color: rgba(0, 0, 0, 0.03) !important;
+}
+
+.winbar-start-menu-light .winbar-start-section-button {
+    background-color: rgba(0, 0, 0, 0.04) !important;
+}
+
+/* Light mode search results */
+.winbar-start-menu-light .winbar-search-result-name {
+    color: #000000 !important;
+}
+
+.winbar-start-menu-light .winbar-search-result-description {
+    color: rgba(0, 0, 0, 0.6) !important;
+}
+
+.winbar-start-menu-light .winbar-search-result-item:hover,
+.winbar-start-menu-light .winbar-search-result-item.selected {
+    background-color: rgba(0, 0, 0, 0.05) !important;
+}
+
+.winbar-start-menu-light .winbar-search-result-item:active {
+    background-color: rgba(0, 0, 0, 0.03) !important;
+}
+
+.winbar-start-menu-light .winbar-search-no-results {
+    color: rgba(0, 0, 0, 0.5) !important;
+}
+
+/* ============================================
+   Quick Settings Light Mode
+   ============================================ */
+.winbar-qs-light {
+    background-color: rgba(250, 250, 250, 0.95);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2), inset 0 0 0 1px rgba(0, 0, 0, 0.05);
+}
+
+.winbar-qs-light .winbar-qs-tile {
+    background-color: rgba(0, 0, 0, 0.04);
+}
+
+.winbar-qs-light .winbar-qs-tile:hover {
+    background-color: rgba(0, 0, 0, 0.08);
+}
+
+.winbar-qs-light .winbar-qs-tile-main:hover {
+    background-color: rgba(0, 0, 0, 0.04);
+}
+
+.winbar-qs-light .winbar-qs-tile-icon,
+.winbar-qs-light .winbar-qs-tile-main StIcon {
+    color: rgba(0, 0, 0, 0.85);
+}
+
+.winbar-qs-light .winbar-qs-tile-label {
+    color: rgba(0, 0, 0, 0.9);
+}
+
+/* Active tiles keep the blue accent */
+.winbar-qs-light .winbar-qs-tile-main.active {
+    background-color: rgba(96, 205, 255, 0.95);
+}
+
+.winbar-qs-light .winbar-qs-tile-main.active:hover {
+    background-color: rgba(116, 215, 255, 1);
+}
+
+.winbar-qs-light .winbar-qs-tile-main.active StIcon,
+.winbar-qs-light .winbar-qs-tile-main.active .winbar-qs-tile-label {
+    color: rgba(0, 0, 0, 0.9);
+}
+
+/* Arrow button light mode */
+.winbar-qs-light .winbar-qs-tile-arrow {
+    border-left-color: rgba(0, 0, 0, 0.08);
+}
+
+.winbar-qs-light .winbar-qs-tile-arrow:hover {
+    background-color: rgba(0, 0, 0, 0.08);
+}
+
+.winbar-qs-light .winbar-qs-tile-arrow StIcon {
+    color: rgba(0, 0, 0, 0.5);
+}
+
+/* Unavailable tiles */
+.winbar-qs-light .winbar-qs-tile.unavailable .winbar-qs-tile-main {
+    background-color: rgba(0, 0, 0, 0.02);
+}
+
+/* Slider section light mode */
+.winbar-qs-light .winbar-qs-volume-btn:hover,
+.winbar-qs-light .winbar-qs-slider-settings:hover {
+    background-color: rgba(0, 0, 0, 0.08);
+}
+
+.winbar-qs-light .winbar-qs-volume-btn StIcon,
+.winbar-qs-light .winbar-qs-slider-icon {
+    color: rgba(0, 0, 0, 0.8);
+}
+
+.winbar-qs-light .winbar-qs-slider {
+    -barlevel-background-color: rgba(0, 0, 0, 0.12);
+}
+
+.winbar-qs-light .winbar-qs-slider:hover {
+    -barlevel-background-color: rgba(0, 0, 0, 0.18);
+}
+
+.winbar-qs-light .winbar-qs-slider-settings StIcon {
+    color: rgba(0, 0, 0, 0.4);
+}
+
+/* Bottom row light mode */
+.winbar-qs-light .winbar-qs-bottom-row {
+    border-top-color: rgba(0, 0, 0, 0.08);
+}
+
+.winbar-qs-light .winbar-qs-battery StIcon,
+.winbar-qs-light .winbar-qs-battery-label {
+    color: rgba(0, 0, 0, 0.85);
+}
+
+.winbar-qs-light .winbar-qs-action-btn {
+    background-color: rgba(0, 0, 0, 0.04);
+    border-color: rgba(0, 0, 0, 0.06);
+}
+
+.winbar-qs-light .winbar-qs-action-btn:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.winbar-qs-light .winbar-qs-action-btn StIcon {
+    color: rgba(0, 0, 0, 0.85);
+}
+
+/* Search Section */
+.winbar-start-search-section {
+    margin-bottom: 16px;
+}
+
+.winbar-start-search-entry {
+    background-color: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 24px;
+    padding: 10px 16px;
+    color: #ffffff;
+    font-size: 14px;
+    caret-color: -st-accent-color;
+    hint-color: rgba(255, 255, 255, 0.6);
+}
+
+.winbar-start-search-entry:focus {
+    background-color: rgba(255, 255, 255, 0.08);
+    border-color: -st-accent-color;
+}
+
+.winbar-start-search-entry:hover {
+    background-color: rgba(255, 255, 255, 0.08);
+}
+
+.winbar-start-search-entry StIcon {
+    color: rgba(255, 255, 255, 0.6);
+    padding-right: 8px;
+}
+
+.winbar-start-search-entry::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.winbar-start-search-entry StLabel {
+    color: #ffffff;
+}
+
+.winbar-start-menu-light .winbar-start-search-entry {
+    background-color: rgba(0, 0, 0, 0.04) !important;
+    border: 1px solid rgba(0, 0, 0, 0.08) !important;
+    color: #000000 !important;
+    hint-color: rgba(0, 0, 0, 0.6) !important;
+}
+
+.winbar-start-menu-light .winbar-start-search-entry:focus {
+    background-color: rgba(0, 0, 0, 0.06) !important;
+    border-color: -st-accent-color !important;
+}
+
+.winbar-start-menu-light .winbar-start-search-entry:hover {
+    background-color: rgba(0, 0, 0, 0.06) !important;
+}
+
+.winbar-start-menu-light .winbar-start-search-entry StIcon {
+    color: rgba(0, 0, 0, 0.6) !important;
+}
+
+.winbar-start-menu-light .winbar-start-search-entry StLabel {
+    color: #000000 !important;
+}
+
+.winbar-start-menu-light .winbar-start-search-entry::placeholder {
+    color: rgba(0, 0, 0, 0.6) !important;
+}
+
+/* Search Results List View */
+.winbar-search-results {
+    margin-top: 12px;
+}
+
+.winbar-search-results-scroll {
+    max-height: 400px;
+}
+
+.winbar-search-results-box {
+    spacing: 2px;
+    padding: 4px 8px;
+}
+
+.winbar-search-result-item {
+    background-color: transparent;
+    border-radius: 8px;
+    padding: 8px 12px;
+    transition: background-color 100ms ease;
+}
+
+.winbar-search-result-item StWidget {
+    text-align: left;
+}
+
+.winbar-search-result-item:hover,
+.winbar-search-result-item.selected {
+    background-color: rgba(255, 255, 255, 0.08);
+}
+
+.winbar-search-result-item:active {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.winbar-search-result-item-box {
+    spacing: 12px;
+}
+
+.winbar-search-result-icon {
+    icon-size: 32px;
+}
+
+.winbar-search-result-text-box {
+    spacing: 2px;
+}
+
+.winbar-search-result-name {
+    font-size: 14px;
+    font-weight: 500;
+    color: #ffffff;
+}
+
+.winbar-search-result-description {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.winbar-search-no-results {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.5);
+    padding: 40px 0;
+}
+
+/* Main Scroll Area */
+.winbar-start-main-scroll {
+    margin-top: 12px;
+}
+
+.winbar-start-scroll-content {
+    spacing: 8px;
+}
+
+/* Section Headers */
+.winbar-start-section-header {
+    margin: 12px 0 8px 0;
+}
+
+.winbar-start-section-title {
+    font-size: 13px;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+.winbar-start-section-button {
+    background-color: rgba(255, 255, 255, 0.06);
+    border-radius: 6px;
+    padding: 4px 10px;
+}
+
+.winbar-start-section-button:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.winbar-start-section-button StLabel {
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.winbar-start-section-button StIcon {
+    color: rgba(255, 255, 255, 0.6);
+    margin-left: 4px;
+}
+
+/* Pinned Apps Grid */
+.winbar-start-pinned-scroll {
+    max-height: 220px;
+}
+
+.winbar-start-pinned-grid {
+    padding: 4px;
+}
+
+.winbar-start-app-button {
+    width: 88px;
+    height: 80px;
+    border-radius: 8px;
+    padding: 8px;
+    transition-duration: 100ms;
+}
+
+.winbar-start-app-button:hover {
+    background-color: rgba(255, 255, 255, 0.08);
+}
+
+.winbar-start-app-button:active {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.winbar-start-app-button.dragging {
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 2px dashed rgba(255, 255, 255, 0.3);
+}
+
+.winbar-start-app-button.drop-target {
+    background-color: rgba(100, 180, 255, 0.25);
+    border: 2px solid rgba(100, 180, 255, 0.6);
+    border-radius: 8px;
+}
+
+.winbar-drag-clone {
+    background-color: rgba(50, 50, 60, 0.95);
+    border-radius: 10px;
+    padding: 12px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.winbar-start-app-icon {
+    margin-bottom: 4px;
+}
+
+.winbar-start-app-label {
+    font-size: 11px;
+    color: #ffffff;
+    text-align: center;
+}
+
+/* Recommended Section */
+.winbar-start-recommended-box {
+    margin: 8px 0;
+    padding: 0 16px;
+}
+
+.winbar-start-recommended-item {
+    padding: 10px 12px;
+    border-radius: 8px;
+    min-height: 48px;
+}
+
+.winbar-start-recommended-item:hover {
+    background-color: rgba(255, 255, 255, 0.08);
+}
+
+.winbar-start-recommended-item StBoxLayout {
+    spacing: 12px;
+}
+
+.winbar-start-recommended-icon {
+    icon-size: 36px;
+}
+
+.winbar-start-recommended-name {
+    font-size: 13px;
+    color: #ffffff;
+    font-weight: 500;
+}
+
+.winbar-start-recommended-time {
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.55);
+    margin-top: 2px;
+}
+
+.winbar-start-recommended-placeholder {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.5);
+    padding: 20px;
+}
+
+/* All Apps Section */
+.winbar-start-all-apps-section {
+    /* Takes full space when visible */
+}
+
+.winbar-start-all-apps-scroll {
+    /* Scroll view expands to fill available space */
+}
+
+.winbar-start-all-apps-list {
+    padding: 4px;
+    spacing: 2px;
+}
+
+.winbar-start-all-apps-letter {
+    font-size: 14px;
+    font-weight: 600;
+    color: #60cdff;
+    padding: 12px 8px 6px 8px;
+}
+
+.winbar-start-app-row {
+    padding: 6px 12px;
+    border-radius: 6px;
+}
+
+.winbar-start-app-row:hover {
+    background-color: rgba(255, 255, 255, 0.08);
+}
+
+.winbar-start-app-row StBoxLayout {
+    spacing: 12px;
+}
+
+.winbar-start-app-row-icon {
+    /* Icon styles */
+}
+
+.winbar-start-app-row-label {
+    font-size: 13px;
+    color: #ffffff;
+}
+
+/* Bottom Bar */
+.winbar-start-bottom-bar {
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.winbar-start-user-button {
+    padding: 8px 12px;
+    border-radius: 8px;
+}
+
+.winbar-start-user-button:hover {
+    background-color: rgba(255, 255, 255, 0.08);
+}
+
+.winbar-start-user-box {
+    spacing: 12px;
+}
+
+.winbar-start-user-avatar {
+    color: rgba(255, 255, 255, 0.9);
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 4px;
+}
+
+.winbar-start-user-name {
+    font-size: 13px;
+    color: #ffffff;
+    font-weight: 500;
+}
+
+.winbar-start-power-button {
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.winbar-start-power-button:hover {
+    background-color: rgba(255, 255, 255, 0.08);
+}
+
+.winbar-start-power-button StIcon {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.winbar-start-menu-light .winbar-start-power-button StIcon {
+    color: rgba(0, 0, 0, 0.9) !important;
+}
+
+/* Power Menu Dropdown */
+.winbar-start-power-menu {
+    background-color: rgba(40, 40, 40, 0.98);
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+    padding: 6px;
+    min-width: 200px;
+}
+
+.winbar-start-power-menu-item {
+    padding: 10px 16px;
+    border-radius: 6px;
+}
+
+.winbar-start-power-menu-item:hover {
+    background-color: rgba(255, 255, 255, 0.08);
+}
+
+.winbar-start-power-menu-item StBoxLayout {
+    spacing: 12px;
+}
+
+.winbar-start-power-menu-icon {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.winbar-start-power-menu-label {
+    font-size: 13px;
+    color: #ffffff;
+}
+
+/* ============================================
+   ALL APPS GRID SECTION
+   ============================================ */
+
+.winbar-start-sort-btn-box {
+    spacing: 6px;
+}
+
+.winbar-start-sort-menu {
+    background-color: rgba(40, 40, 40, 0.98);
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+    padding: 6px;
+    min-width: 140px;
+}
+
+.winbar-start-sort-menu-item {
+    padding: 8px 14px;
+    border-radius: 6px;
+    font-size: 12px;
+    color: #ffffff;
+}
+
+.winbar-start-sort-menu-item:hover {
+    background-color: rgba(255, 255, 255, 0.08);
+}
+
+.winbar-start-all-grid-scroll {
+    /* Scroll view for all apps grid */
+}
+
+.winbar-start-all-grid-container {
+    padding: 4px;
+}
+
+.winbar-start-all-grid {
+    /* Grid of all app buttons */
+}
+
+/* ============================================
+   APP CONTEXT MENU
+   ============================================ */
+
+.winbar-start-context-menu {
+    background-color: rgba(40, 40, 40, 0.98);
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+    padding: 6px;
+    min-width: 220px;
+    max-height: 500px;
+}
+
+.winbar-start-context-menu-header {
+    font-size: 11px;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.6);
+    padding: 8px 12px 4px 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.winbar-start-context-menu-separator {
+    background-color: rgba(255, 255, 255, 0.1);
+    margin: 4px 8px;
+}
+
+.winbar-start-context-menu-item {
+    padding: 8px 12px;
+    border-radius: 6px;
+}
+
+.winbar-start-context-menu-subitem {
+    padding: 6px 12px 6px 24px;
+}
+
+.winbar-start-context-menu-item:hover {
+    background-color: rgba(255, 255, 255, 0.08);
+}
+
+.winbar-start-context-menu-item StBoxLayout {
+    spacing: 10px;
+}
+
+.winbar-start-context-menu-icon {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.winbar-start-context-menu-label {
+    font-size: 12px;
+    color: #ffffff;
+    text-align: left;
+    x-align: start;
+}
+
+/* ============================================
+   SEARCH DIALOG - Windows 11 Style
+   ============================================ */
+
+/* Dialog wrapper */
+.winbar-search-dialog {}
+
+/* Main search container (matches start menu style) */
+.winbar-search-dialog-container {
+    background-color: rgba(28, 28, 28, 0.78);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5), inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+    padding: 20px;
+    min-width: 600px;
+    height: 640px;
+}
+
+/* Search box at top */
+.winbar-search-box-dialog {
+    background-color: rgba(45, 45, 45, 0.98);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 8px;
+    margin: 0 0 16px 0;
+    padding: 4px 12px;
+    spacing: 8px;
+    min-height: 48px;
+}
+
+.winbar-search-box-icon {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.winbar-search-entry-dialog {
+    background-color: transparent;
+    border: none;
+    color: #ffffff;
+    font-size: 14px;
+    padding: 0;
+    margin: 0;
+}
+
+.winbar-search-entry-dialog:focus {
+    background-color: transparent;
+    box-shadow: none;
+    border: none;
+}
+
+.winbar-search-entry-dialog StLabel.hint-text {
+    color: rgba(255, 255, 255, 0.3);
+}
+
+/* Content area */
+.winbar-search-content {
+    padding: 0 16px 16px 16px;
+}
+
+/* ============================================
+   SEARCH OVERVIEW PANEL
+   ============================================ */
+
+.winbar-search-overview {
+    padding: 0;
+}
+
+.winbar-search-overview-scroll {
+    padding: 0;
+}
+
+.winbar-search-section {
+    padding: 16px 0;
+    spacing: 12px;
+}
+
+.winbar-search-section-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 8px;
+}
+
+/* Quick Links */
+.winbar-search-quick-links {
+    padding: 8px 0;
+}
+
+.winbar-search-quick-link {
+    background-color: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    padding: 16px;
+    min-width: 100px;
+    min-height: 100px;
+    transition: all 150ms ease;
+}
+
+.winbar-search-quick-link:hover {
+    background-color: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.12);
+    transform: translateY(-2px);
+}
+
+.winbar-search-quick-link:active {
+    background-color: rgba(255, 255, 255, 0.05);
+    transform: translateY(0);
+}
+
+.winbar-search-quick-link-icon {
+    color: -st-accent-color;
+    margin-bottom: 8px;
+}
+
+.winbar-search-quick-link-label {
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.9);
+    text-align: center;
+}
+
+/* Top Apps Grid */
+.winbar-search-top-apps {
+    padding: 8px 0;
+}
+
+.winbar-search-top-app {
+    background-color: transparent;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    padding: 12px;
+    min-width: 100px;
+    transition: all 150ms ease;
+}
+
+.winbar-search-top-app:hover {
+    background-color: rgba(255, 255, 255, 0.06);
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+.winbar-search-top-app:active {
+    background-color: rgba(255, 255, 255, 0.04);
+}
+
+.winbar-search-top-app-icon {
+    margin-bottom: 6px;
+}
+
+.winbar-search-top-app-label {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.9);
+    text-align: center;
+}
+
+/* Recent Apps List */
+.winbar-search-recent-list {
+    spacing: 4px;
+    padding: 4px 16px;
+}
+
+.winbar-search-recent-item {
+    background-color: transparent;
+    border-radius: 6px;
+    padding: 0;
+    transition: all 150ms ease;
+}
+
+.winbar-search-recent-item:hover {
+    background-color: rgba(255, 255, 255, 0.06);
+}
+
+.winbar-search-recent-item:active {
+    background-color: rgba(255, 255, 255, 0.04);
+}
+
+.winbar-search-recent-item-box {
+    padding: 8px 12px;
+    spacing: 12px;
+}
+
+.winbar-search-recent-icon {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.winbar-search-recent-name {
+    font-size: 13px;
+    font-weight: 500;
+    color: #ffffff;
+}
+
+.winbar-search-recent-description {
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.winbar-search-recent-empty {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.4);
+    padding: 16px;
+    font-style: italic;
+}
+
+/* ============================================
+   SEARCH RESULTS PANEL
+   ============================================ */
+
+.winbar-search-results-panel {
+    padding: 0;
+}
+
+/* Category Filters */
+.winbar-search-categories {
+    spacing: 8px;
+    padding: 8px 0 16px 0;
+}
+
+.winbar-search-category-button {
+    background-color: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 16px;
+    padding: 6px 16px;
+    font-size: 12px;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.7);
+    transition: all 150ms ease;
+}
+
+.winbar-search-category-button:hover {
+    background-color: rgba(255, 255, 255, 0.08);
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.winbar-search-category-button:checked {
+    background-color: -st-accent-color;
+    border-color: -st-accent-color;
+    color: white;
+}
+
+.winbar-search-category-button:checked:hover {
+    background-color: rgba(0, 103, 192, 0.9);
+}
+
+/* Results Container */
+.winbar-search-results-container {
+    spacing: 0;
+}
+
+.winbar-search-results-scroll {
+    padding: 0;
+}
+
+.winbar-search-results-list {
+    spacing: 4px;
+    padding: 4px 16px;
+}
+
+/* Best Match Section */
+.winbar-search-best-match {
+    background-color: rgba(255, 255, 255, 0.04);
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin-bottom: 8px;
+}
+
+.winbar-search-best-match-label {
+    font-size: 11px;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.5);
+    margin-bottom: 4px;
+}
+
+.winbar-search-best-match-name {
+    font-size: 16px;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+.winbar-search-best-match-description {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+/* Result Group Headers */
+.winbar-search-group-header {
+    font-size: 11px;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.4);
+    padding: 8px 0 4px 0;
+    margin-top: 8px;
+}
+
+/* Result Items */
+.winbar-search-result-item-dialog {
+    background-color: transparent;
+    border-radius: 6px;
+    padding: 0;
+    transition: all 150ms ease;
+}
+
+.winbar-search-result-item-dialog:hover,
+.winbar-search-result-item-dialog.selected {
+    background-color: rgba(255, 255, 255, 0.08);
+}
+
+.winbar-search-result-item-dialog:active {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.winbar-search-result-box-dialog {
+    padding: 10px 12px;
+    spacing: 12px;
+}
+
+.winbar-search-result-icon-dialog {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.winbar-search-result-name-dialog {
+    font-size: 13px;
+    font-weight: 500;
+    color: #ffffff;
+}
+
+.winbar-search-result-description-dialog {
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.winbar-search-no-results-dialog {
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.5);
+    padding: 32px 0;
+    text-align: center;
+}
+
+/* Preview Pane */
+.winbar-search-preview-pane {
+    background-color: rgba(35, 35, 35, 0.98);
+    border-left: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 0 8px 8px 0;
+    padding: 24px;
+    min-width: 200px;
+    max-width: 250px;
+    spacing: 16px;
+}
+
+.winbar-search-preview-icon {
+    color: -st-accent-color;
+    align-self: center;
+    margin-bottom: 16px;
+}
+
+.winbar-search-preview-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: #ffffff;
+    text-align: center;
+}
+
+.winbar-search-preview-description {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.6);
+    text-align: center;
+}
+
+/* ============================================
+   LIGHT MODE - SEARCH DIALOG
+   ============================================ */
+
+.shell-light .winbar-search-background {
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.shell-light .winbar-search-container {
+    background-color: rgba(243, 243, 243, 0.98);
+    border-color: rgba(0, 0, 0, 0.08);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+}
+
+.shell-light .winbar-search-box-dialog {
+    background-color: rgba(255, 255, 255, 0.98);
+    border-color: rgba(0, 0, 0, 0.1);
+}
+
+.shell-light .winbar-search-box-icon {
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.shell-light .winbar-search-entry-dialog {
+    color: #000000;
+}
+
+.shell-light .winbar-search-entry-dialog StLabel.hint-text {
+    color: rgba(0, 0, 0, 0.3);
+}
+
+.shell-light .winbar-search-section-title {
+    color: #000000;
+}
+
+.shell-light .winbar-search-quick-link {
+    background-color: rgba(0, 0, 0, 0.02);
+    border-color: rgba(0, 0, 0, 0.06);
+}
+
+.shell-light .winbar-search-quick-link:hover {
+    background-color: rgba(0, 0, 0, 0.06);
+    border-color: rgba(0, 0, 0, 0.12);
+}
+
+.shell-light .winbar-search-quick-link-label {
+    color: rgba(0, 0, 0, 0.9);
+}
+
+.shell-light .winbar-search-top-app:hover {
+    background-color: rgba(0, 0, 0, 0.04);
+    border-color: rgba(0, 0, 0, 0.08);
+}
+
+.shell-light .winbar-search-top-app-label {
+    color: rgba(0, 0, 0, 0.9);
+}
+
+.shell-light .winbar-search-recent-item:hover {
+    background-color: rgba(0, 0, 0, 0.04);
+}
+
+.shell-light .winbar-search-recent-name {
+    color: #000000;
+}
+
+.shell-light .winbar-search-recent-description {
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.shell-light .winbar-search-category-button {
+    background-color: rgba(0, 0, 0, 0.03);
+    border-color: rgba(0, 0, 0, 0.08);
+    color: rgba(0, 0, 0, 0.7);
+}
+
+.shell-light .winbar-search-category-button:hover {
+    background-color: rgba(0, 0, 0, 0.06);
+    color: rgba(0, 0, 0, 0.9);
+}
+
+.shell-light .winbar-search-result-item-dialog:hover,
+.shell-light .winbar-search-result-item-dialog.selected {
+    background-color: rgba(0, 0, 0, 0.06);
+}
+
+.shell-light .winbar-search-result-name-dialog {
+    color: #000000;
+}
+
+.shell-light .winbar-search-result-description-dialog {
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.shell-light .winbar-search-no-results-dialog {
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.shell-light .winbar-search-best-match {
+    background-color: rgba(0, 0, 0, 0.03);
+}
+
+.shell-light .winbar-search-best-match-label {
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.shell-light .winbar-search-best-match-name {
+    color: #000000;
+}
+
+.shell-light .winbar-search-best-match-description {
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.shell-light .winbar-search-group-header {
+    color: rgba(0, 0, 0, 0.4);
+}
+
+.shell-light .winbar-search-preview-pane {
+    background-color: rgba(235, 235, 235, 0.98);
+    border-left-color: rgba(0, 0, 0, 0.08);
+}
+
+.shell-light .winbar-search-preview-title {
+    color: #000000;
+}
+
+.shell-light .winbar-search-preview-description {
+    color: rgba(0, 0, 0, 0.6);
+}
+
+/* ============================================
+   EXTENSION-CONTROLLED LIGHT MODE - SEARCH DIALOG
+   (Uses theme mode from extension settings)
+   ============================================ */
+
+.winbar-search-dialog-light .winbar-search-section-title {
+    color: #000000;
+}
+
+.winbar-search-dialog-light .winbar-search-box-dialog {
+    background-color: rgba(255, 255, 255, 0.98);
+    border-color: rgba(0, 0, 0, 0.1);
+}
+
+.winbar-search-dialog-light .winbar-search-box-icon {
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.winbar-search-dialog-light .winbar-search-entry-dialog {
+    color: #000000;
+}
+
+.winbar-search-dialog-light .winbar-search-entry-dialog StLabel.hint-text {
+    color: rgba(0, 0, 0, 0.4);
+}
+
+.winbar-search-dialog-light .winbar-search-quick-link {
+    background-color: rgba(0, 0, 0, 0.02);
+    border-color: rgba(0, 0, 0, 0.06);
+}
+
+.winbar-search-dialog-light .winbar-search-quick-link:hover {
+    background-color: rgba(0, 0, 0, 0.06);
+    border-color: rgba(0, 0, 0, 0.12);
+}
+
+.winbar-search-dialog-light .winbar-search-quick-link-label {
+    color: rgba(0, 0, 0, 0.9);
+}
+
+.winbar-search-dialog-light .winbar-search-top-app:hover {
+    background-color: rgba(0, 0, 0, 0.04);
+    border-color: rgba(0, 0, 0, 0.08);
+}
+
+.winbar-search-dialog-light .winbar-search-top-app-label {
+    color: rgba(0, 0, 0, 0.9);
+}
+
+.winbar-search-dialog-light .winbar-search-recent-item:hover {
+    background-color: rgba(0, 0, 0, 0.04);
+}
+
+.winbar-search-dialog-light .winbar-search-recent-name {
+    color: #000000;
+}
+
+.winbar-search-dialog-light .winbar-search-recent-description {
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.winbar-search-dialog-light .winbar-search-recent-icon {
+    color: rgba(0, 0, 0, 0.8);
+}
+
+.winbar-search-dialog-light .winbar-search-recent-empty {
+    color: rgba(0, 0, 0, 0.4);
+}
+
+.winbar-search-dialog-light .winbar-search-category-button {
+    background-color: rgba(0, 0, 0, 0.03);
+    border-color: rgba(0, 0, 0, 0.08);
+    color: rgba(0, 0, 0, 0.7);
+}
+
+.winbar-search-dialog-light .winbar-search-category-button:hover {
+    background-color: rgba(0, 0, 0, 0.06);
+    color: rgba(0, 0, 0, 0.9);
+}
+
+.winbar-search-dialog-light .winbar-search-result-item-dialog:hover,
+.winbar-search-dialog-light .winbar-search-result-item-dialog.selected {
+    background-color: rgba(0, 0, 0, 0.06);
+}
+
+.winbar-search-dialog-light .winbar-search-result-icon-dialog {
+    color: rgba(0, 0, 0, 0.8);
+}
+
+.winbar-search-dialog-light .winbar-search-result-name-dialog {
+    color: #000000;
+}
+
+.winbar-search-dialog-light .winbar-search-result-description-dialog {
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.winbar-search-dialog-light .winbar-search-no-results-dialog {
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.winbar-search-dialog-light .winbar-search-best-match {
+    background-color: rgba(0, 0, 0, 0.03);
+}
+
+.winbar-search-dialog-light .winbar-search-best-match-label {
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.winbar-search-dialog-light .winbar-search-best-match-name {
+    color: #000000;
+}
+
+.winbar-search-dialog-light .winbar-search-best-match-description {
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.winbar-search-dialog-light .winbar-search-group-header {
+    color: rgba(0, 0, 0, 0.4);
+}
+
+.winbar-search-dialog-light .winbar-search-preview-pane {
+    background-color: rgba(235, 235, 235, 0.98);
+    border-left-color: rgba(0, 0, 0, 0.08);
+}
+
+.winbar-search-dialog-light .winbar-search-preview-title {
+    color: #000000;
+}
+
+.winbar-search-dialog-light .winbar-search-preview-description {
+    color: rgba(0, 0, 0, 0.6);
+}
+
+/* ============================================
+   TASK SWITCHER (Alt+Tab) - Windows 11 Style
+   ============================================ */
+
+.winbar-task-switcher {
+    /* Full screen container */
+}
+
+.winbar-task-switcher-overlay {
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.winbar-task-switcher-container {
+    background-color: rgba(32, 32, 32, 0.85);
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    box-shadow: 0 25px 80px rgba(0, 0, 0, 0.5);
+    padding: 12px;
+}
+
+.winbar-task-switcher-container.light-theme {
+    background-color: rgba(243, 243, 243, 0.92);
+    border-color: rgba(0, 0, 0, 0.08);
+    box-shadow: 0 25px 80px rgba(0, 0, 0, 0.2);
+}
+
+.winbar-task-switcher-list {
+    spacing: 6px;
+}
+
+.winbar-task-switcher-item {
+    background-color: transparent;
+    border-radius: 6px;
+    border: 2px solid transparent;
+    padding: 8px;
+    transition: all 100ms ease;
+}
+
+.winbar-task-switcher-item:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.winbar-task-switcher-item:selected,
+.winbar-task-switcher-item:focus {
+    background-color: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.12);
+}
+
+.winbar-task-switcher-container.light-theme .winbar-task-switcher-item:hover {
+    background-color: rgba(0, 0, 0, 0.04);
+}
+
+.winbar-task-switcher-container.light-theme .winbar-task-switcher-item:selected,
+.winbar-task-switcher-container.light-theme .winbar-task-switcher-item:focus {
+    background-color: rgba(0, 0, 0, 0.06);
+    border-color: rgba(0, 0, 0, 0.1);
+}
+
+.winbar-task-switcher-item-content {
+    spacing: 6px;
+}
+
+.winbar-task-switcher-header {
+    spacing: 8px;
+    padding: 0 2px;
+}
+
+.winbar-task-switcher-icon {
+    /* App icon in header */
+}
+
+.winbar-task-switcher-item-title {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.winbar-task-switcher-container.light-theme .winbar-task-switcher-item-title {
+    color: rgba(0, 0, 0, 0.85);
+}
+
+.winbar-task-switcher-thumbnail {
+    background-color: rgba(0, 0, 0, 0.35);
+    border-radius: 4px;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.winbar-task-switcher-container.light-theme .winbar-task-switcher-thumbnail {
+    background-color: rgba(0, 0, 0, 0.08);
+    border-color: rgba(0, 0, 0, 0.08);
+}
+
+.winbar-task-switcher-close {
+    background-color: transparent;
+    border-radius: 4px;
+    padding: 4px;
+    opacity: 0;
+    transition: opacity 100ms ease, background-color 100ms ease;
+}
+
+.winbar-task-switcher-item:hover .winbar-task-switcher-close {
+    opacity: 1;
+}
+
+.winbar-task-switcher-close:hover {
+    background-color: rgba(196, 43, 28, 0.9);
+}
+
+.winbar-task-switcher-close StIcon {
+    color: rgba(255, 255, 255, 0.8);
+    icon-size: 12px;
+}
+
+.winbar-task-switcher-close:hover StIcon {
+    color: #ffffff;
+}
+
+.winbar-task-switcher-container.light-theme .winbar-task-switcher-close StIcon {
+    color: rgba(0, 0, 0, 0.5);
+}

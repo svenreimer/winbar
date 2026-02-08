@@ -1,0 +1,542 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist gettext-domain="winbar">
+    
+    <!-- Enums -->
+    <enum id="org.gnome.shell.extensions.winbar.TaskbarPosition">
+        <value nick="bottom" value="0"/>
+        <value nick="top" value="1"/>
+    </enum>
+    
+    <enum id="org.gnome.shell.extensions.winbar.ThemeMode">
+        <value nick="auto" value="0"/>
+        <value nick="dark" value="1"/>
+        <value nick="light" value="2"/>
+    </enum>
+    
+    <enum id="org.gnome.shell.extensions.winbar.ClickBehavior">
+        <value nick="smart" value="0"/>
+        <value nick="raise" value="1"/>
+        <value nick="preview" value="2"/>
+        <value nick="cycle" value="3"/>
+    </enum>
+    
+    <enum id="org.gnome.shell.extensions.winbar.SearchStyle">
+        <value nick="box-with-label" value="0"/>
+        <value nick="icon-only" value="1"/>
+        <value nick="hidden" value="2"/>
+    </enum>
+    
+    <enum id="org.gnome.shell.extensions.winbar.ClockFormat">
+        <value nick="24h" value="0"/>
+        <value nick="12h" value="1"/>
+    </enum>
+    
+    <enum id="org.gnome.shell.extensions.winbar.StartButtonStyle">
+        <value nick="windows" value="0"/>
+        <value nick="gnome" value="1"/>
+        <value nick="custom" value="2"/>
+    </enum>
+    
+    <enum id="org.gnome.shell.extensions.winbar.MultiMonitorMode">
+        <value nick="primary" value="0"/>
+        <value nick="all" value="1"/>
+        <value nick="all-same" value="2"/>
+    </enum>
+    
+    <!-- Main Schema -->
+    <schema id="org.gnome.shell.extensions.winbar" path="/org/gnome/shell/extensions/winbar/">
+        
+        <!-- Appearance -->
+        <key name="taskbar-position" enum="org.gnome.shell.extensions.winbar.TaskbarPosition">
+            <default>'bottom'</default>
+            <summary>Taskbar Position</summary>
+            <description>Position of the taskbar on the screen</description>
+        </key>
+        
+        <key name="taskbar-height" type="i">
+            <default>48</default>
+            <range min="32" max="64"/>
+            <summary>Taskbar Height</summary>
+            <description>Height of the taskbar in pixels</description>
+        </key>
+        
+        <key name="icon-size" type="i">
+            <default>32</default>
+            <range min="16" max="48"/>
+            <summary>Icon Size</summary>
+            <description>Size of application icons in pixels</description>
+        </key>
+        
+        <key name="theme-mode" enum="org.gnome.shell.extensions.winbar.ThemeMode">
+            <default>'auto'</default>
+            <summary>Theme Mode</summary>
+            <description>Theme mode for the taskbar</description>
+        </key>
+        
+        <key name="panel-opacity" type="i">
+            <default>85</default>
+            <range min="0" max="100"/>
+            <summary>Panel Opacity</summary>
+            <description>Opacity of the taskbar panel (0-100)</description>
+        </key>
+        
+        <key name="blur-effect" type="b">
+            <default>true</default>
+            <summary>Blur Effect</summary>
+            <description>Enable background blur effect</description>
+        </key>
+
+        <key name="blur-strength" type="i">
+            <default>30</default>
+            <range min="0" max="100"/>
+            <summary>Blur Strength</summary>
+            <description>Strength of the blur effect (0-100)</description>
+        </key>
+
+        <key name="border-radius" type="i">
+            <default>0</default>
+            <range min="0" max="20"/>
+            <summary>Border Radius</summary>
+            <description>Corner radius of the taskbar</description>
+        </key>
+        
+        <!-- Behavior -->
+        <key name="hide-original-panel" type="b">
+            <default>true</default>
+            <summary>Hide Original Panel</summary>
+            <description>Hide the default GNOME top panel</description>
+        </key>
+        
+        <key name="center-taskbar-items" type="b">
+            <default>true</default>
+            <summary>Center Taskbar Items</summary>
+            <description>Center the app icons in the taskbar</description>
+        </key>
+        
+        <key name="show-window-previews" type="b">
+            <default>true</default>
+            <summary>Show Window Previews</summary>
+            <description>Show window thumbnails on hover</description>
+        </key>
+        
+        <key name="preview-hover-delay" type="i">
+            <default>300</default>
+            <range min="100" max="1000"/>
+            <summary>Preview Hover Delay</summary>
+            <description>Delay in milliseconds before showing preview</description>
+        </key>
+        
+        <key name="click-behavior" enum="org.gnome.shell.extensions.winbar.ClickBehavior">
+            <default>'smart'</default>
+            <summary>Click Behavior</summary>
+            <description>What happens when clicking an app icon</description>
+        </key>
+        
+        <key name="middle-click-action" type="s">
+            <default>'new-window'</default>
+            <summary>Middle Click Action</summary>
+            <description>Action when middle-clicking an app</description>
+        </key>
+        
+        <key name="scroll-action" type="s">
+            <default>'cycle-windows'</default>
+            <summary>Scroll Action</summary>
+            <description>Action when scrolling on an app icon</description>
+        </key>
+        
+        <!-- Elements Visibility -->
+        <key name="show-start-button" type="b">
+            <default>true</default>
+            <summary>Show Start Button</summary>
+            <description>Show the start menu button</description>
+        </key>
+        
+        <key name="show-search" type="b">
+            <default>true</default>
+            <summary>Show Search</summary>
+            <description>Show the search bar</description>
+        </key>
+        
+        <key name="search-style" enum="org.gnome.shell.extensions.winbar.SearchStyle">
+            <default>'box-with-label'</default>
+            <summary>Search Style</summary>
+            <description>Style of the search element</description>
+        </key>
+
+        <key name="use-native-search" type="b">
+            <default>true</default>
+            <summary>Use Native Search</summary>
+            <description>Use GNOME's built-in search (Activities overview) instead of Winbar's search dialog [Experimental]</description>
+        </key>
+
+        <key name="show-task-view" type="b">
+            <default>true</default>
+            <summary>Show Task View</summary>
+            <description>Show the task view button</description>
+        </key>
+        
+        <key name="show-widgets" type="b">
+            <default>true</default>
+            <summary>Show Widgets</summary>
+            <description>Show the widgets panel button</description>
+        </key>
+        
+        <key name="show-clock" type="b">
+            <default>true</default>
+            <summary>Show Clock</summary>
+            <description>Show the clock</description>
+        </key>
+        
+        <key name="clock-format" enum="org.gnome.shell.extensions.winbar.ClockFormat">
+            <default>'24h'</default>
+            <summary>Clock Format</summary>
+            <description>Format of the clock display</description>
+        </key>
+        
+        <key name="show-date" type="b">
+            <default>true</default>
+            <summary>Show Date</summary>
+            <description>Show the date below the time</description>
+        </key>
+        
+        <key name="show-notifications" type="b">
+            <default>true</default>
+            <summary>Show Notifications</summary>
+            <description>Show the notification button</description>
+        </key>
+        <key name="use-native-notifications" type="b">
+            <default>true</default>
+            <summary>Use Native Notifications</summary>
+            <description>Use GNOME's built-in notification center instead of custom popup [Experimental]</description>
+        </key>        
+        <key name="show-show-desktop" type="b">
+            <default>true</default>
+            <summary>Show Desktop Button</summary>
+            <description>Show the show desktop area</description>
+        </key>
+        
+        <!-- ArcMenu Integration -->
+        <key name="use-arcmenu" type="b">
+            <default>true</default>
+            <summary>Use ArcMenu</summary>
+            <description>Use ArcMenu as the start menu if installed</description>
+        </key>
+        
+        <key name="start-button-style" enum="org.gnome.shell.extensions.winbar.StartButtonStyle">
+            <default>'windows'</default>
+            <summary>Start Button Style</summary>
+            <description>Icon style for the start button</description>
+        </key>
+        
+        <key name="custom-start-icon" type="s">
+            <default>''</default>
+            <summary>Custom Start Icon</summary>
+            <description>Path to custom start button icon</description>
+        </key>
+        
+        <!-- System Tray -->
+        <key name="show-system-tray" type="b">
+            <default>true</default>
+            <summary>Show System Tray</summary>
+            <description>Show the system tray area</description>
+        </key>
+        
+        <key name="tray-icon-limit" type="i">
+            <default>4</default>
+            <range min="2" max="10"/>
+            <summary>Tray Icon Limit</summary>
+            <description>Number of visible tray icons before overflow</description>
+        </key>
+        
+        <key name="show-tray-chevron" type="b">
+            <default>true</default>
+            <summary>Show Tray Chevron</summary>
+            <description>Show the overflow chevron for hidden tray icons</description>
+        </key>
+        
+        <key name="use-native-quick-settings" type="b">
+            <default>true</default>
+            <summary>Use Native Quick Settings</summary>
+            <description>When enabled, clicking the system tray icons will open GNOME's native Quick Settings panel instead of Winbar's custom popup [Experimental]</description>
+        </key>
+        
+        <!-- Multi-Monitor -->
+        <key name="multi-monitor-mode" enum="org.gnome.shell.extensions.winbar.MultiMonitorMode">
+            <default>'all'</default>
+            <summary>Multi-Monitor Mode</summary>
+            <description>How to handle multiple monitors</description>
+        </key>
+        
+        <!-- Animation -->
+        <key name="animation-duration" type="i">
+            <default>200</default>
+            <range min="0" max="500"/>
+            <summary>Animation Duration</summary>
+            <description>Duration of animations in milliseconds</description>
+        </key>
+        
+        <key name="enable-animations" type="b">
+            <default>true</default>
+            <summary>Enable Animations</summary>
+            <description>Enable animation effects</description>
+        </key>
+        
+        <key name="enable-task-switcher" type="b">
+            <default>true</default>
+            <summary>Enable Task Switcher</summary>
+            <description>Enable Windows 11-style Alt+Tab task switcher</description>
+        </key>
+        
+        <key name="task-switcher-current-monitor-only" type="b">
+            <default>true</default>
+            <summary>Current Monitor Only</summary>
+            <description>Only show windows from the current monitor in the task switcher</description>
+        </key>
+        
+        <key name="restore-window-positions" type="b">
+            <default>false</default>
+            <summary>Restore Window Positions [Experimental]</summary>
+            <description>Save and restore window positions, sizes, and monitor placement across sessions</description>
+        </key>
+        
+        <key name="switch-windows-forward" type="as">
+            <default>['&lt;Alt&gt;Tab']</default>
+            <summary>Switch Windows Forward</summary>
+            <description>Keybinding to switch windows forward (Alt+Tab)</description>
+        </key>
+        
+        <key name="switch-windows-backward-custom" type="as">
+            <default>['&lt;Shift&gt;&lt;Alt&gt;Tab']</default>
+            <summary>Switch Windows Backward</summary>
+            <description>Keybinding to switch windows backward (Shift+Alt+Tab)</description>
+        </key>
+        
+        <!-- App Indicators -->
+        <key name="running-indicator-style" type="s">
+            <default>'dash'</default>
+            <summary>Running Indicator Style</summary>
+            <description>Style of the running app indicator</description>
+        </key>
+        
+        <key name="indicator-position" type="s">
+            <default>'bottom'</default>
+            <summary>Indicator Position</summary>
+            <description>Position of the running indicator</description>
+        </key>
+        
+        <!-- Window Grouping -->
+        <key name="group-apps" type="b">
+            <default>true</default>
+            <summary>Group Apps</summary>
+            <description>Group windows by application</description>
+        </key>
+        
+        <!-- Favorites/Pinned Apps -->
+        <key name="show-favorites" type="b">
+            <default>true</default>
+            <summary>Show Favorites</summary>
+            <description>Show pinned favorite apps</description>
+        </key>
+        
+        <key name="show-running-apps" type="b">
+            <default>true</default>
+            <summary>Show Running Apps</summary>
+            <description>Show running but unpinned apps</description>
+        </key>
+        
+        <key name="start-menu-pinned-apps" type="as">
+            <default>['org.gnome.Nautilus.desktop', 'org.gnome.Software.desktop', 'org.gnome.Settings.desktop', 'org.gnome.Terminal.desktop', 'org.gnome.TextEditor.desktop', 'firefox-esr.desktop', 'org.gnome.Calculator.desktop', 'org.gnome.Calendar.desktop', 'org.gnome.Contacts.desktop', 'org.gnome.clocks.desktop', 'org.gnome.Weather.desktop', 'org.gnome.Maps.desktop']</default>
+            <summary>Start Menu Pinned Apps</summary>
+            <description>List of app IDs pinned in the Start Menu</description>
+        </key>
+        
+        <!-- Workspace Behavior -->
+        <key name="isolate-workspaces" type="b">
+            <default>false</default>
+            <summary>Isolate Workspaces</summary>
+            <description>Only show apps from current workspace</description>
+        </key>
+
+        <key name="isolate-monitors" type="b">
+            <default>false</default>
+            <summary>Isolate Monitors</summary>
+            <description>Only show apps from current monitor</description>
+        </key>
+
+        <!-- Spacing Options -->
+        <key name="start-button-spacing" type="i">
+            <default>0</default>
+            <range min="0" max="32"/>
+            <summary>Start Button Spacing</summary>
+            <description>Additional spacing around start button in pixels</description>
+        </key>
+
+        <key name="search-spacing" type="i">
+            <default>8</default>
+            <range min="0" max="32"/>
+            <summary>Search Spacing</summary>
+            <description>Additional spacing around search box in pixels</description>
+        </key>
+
+        <key name="taskview-spacing" type="i">
+            <default>0</default>
+            <range min="0" max="32"/>
+            <summary>Task View Spacing</summary>
+            <description>Additional spacing around task view button in pixels</description>
+        </key>
+
+        <key name="app-icon-spacing" type="i">
+            <default>0</default>
+            <range min="0" max="16"/>
+            <summary>App Icon Spacing</summary>
+            <description>Spacing between app icons in pixels</description>
+        </key>
+
+        <key name="system-tray-spacing" type="i">
+            <default>8</default>
+            <range min="0" max="32"/>
+            <summary>System Tray Spacing</summary>
+            <description>Spacing between system tray icons in pixels</description>
+        </key>
+
+        <key name="clock-spacing" type="i">
+            <default>0</default>
+            <range min="0" max="32"/>
+            <summary>Clock Spacing</summary>
+            <description>Additional spacing around clock in pixels</description>
+        </key>
+
+        <key name="panel-padding-horizontal" type="i">
+            <default>8</default>
+            <range min="0" max="32"/>
+            <summary>Panel Horizontal Padding</summary>
+            <description>Horizontal padding inside the panel in pixels</description>
+        </key>
+
+        <key name="panel-padding-vertical" type="i">
+            <default>0</default>
+            <range min="0" max="16"/>
+            <summary>Panel Vertical Padding</summary>
+            <description>Vertical padding inside the panel in pixels</description>
+        </key>
+
+        <!-- Search Settings -->
+        <key name="search-folders" type="as">
+            <default>['~/Documents', '~/Downloads']</default>
+            <summary>Search Folders</summary>
+            <description>List of folders to search for documents</description>
+        </key>
+
+        <key name="search-file-content" type="b">
+            <default>false</default>
+            <summary>Search File Content</summary>
+            <description>Search within file contents (may be slower)</description>
+        </key>
+
+        <key name="search-max-results" type="i">
+            <default>10</default>
+            <range min="5" max="20"/>
+            <summary>Maximum Search Results</summary>
+            <description>Maximum number of search results to display</description>
+        </key>
+
+        <key name="search-settings-panels" type="b">
+            <default>true</default>
+            <summary>Search Settings Panels</summary>
+            <description>Include GNOME Settings panels in search results</description>
+        </key>
+
+        <key name="search-documents" type="b">
+            <default>true</default>
+            <summary>Search Documents</summary>
+            <description>Include documents from configured folders in search results</description>
+        </key>
+
+        <key name="search-learning-data" type="s">
+            <default>'{}'</default>
+            <summary>Search Learning Data</summary>
+            <description>JSON object storing search query to app associations for learning</description>
+        </key>
+
+        <key name="search-synonyms" type="s">
+            <default>''</default>
+            <summary>Search Synonyms</summary>
+            <description>JSON object mapping search terms to app name lists. Empty string uses built-in defaults.</description>
+        </key>
+
+        <!-- Advanced Search Bar Settings -->
+        <key name="search-show-recent-apps" type="b">
+            <default>true</default>
+            <summary>Show Recent Apps</summary>
+            <description>Show recently used apps in search overview</description>
+        </key>
+
+        <key name="search-show-quick-links" type="b">
+            <default>true</default>
+            <summary>Show Quick Links</summary>
+            <description>Show quick settings links in search overview</description>
+        </key>
+
+        <key name="search-show-top-apps" type="b">
+            <default>true</default>
+            <summary>Show Top Apps</summary>
+            <description>Show most used apps grid in search overview</description>
+        </key>
+
+        <key name="search-top-apps-count" type="i">
+            <default>6</default>
+            <range min="3" max="12"/>
+            <summary>Top Apps Count</summary>
+            <description>Number of top apps to show</description>
+        </key>
+
+        <key name="search-quick-links" type="as">
+            <default>['sound', 'network', 'bluetooth', 'display', 'power', 'search']</default>
+            <summary>Quick Links</summary>
+            <description>List of settings panel quick links to show</description>
+        </key>
+
+        <key name="search-show-preview" type="b">
+            <default>true</default>
+            <summary>Show Preview Pane</summary>
+            <description>Show preview pane for selected search result</description>
+        </key>
+
+        <key name="search-category-all" type="b">
+            <default>true</default>
+            <summary>Search All Categories</summary>
+            <description>Include All category filter</description>
+        </key>
+
+        <key name="search-category-apps" type="b">
+            <default>true</default>
+            <summary>Search Apps Category</summary>
+            <description>Include Apps category filter</description>
+        </key>
+
+        <key name="search-category-documents" type="b">
+            <default>true</default>
+            <summary>Search Documents Category</summary>
+            <description>Include Documents category filter</description>
+        </key>
+
+        <key name="search-category-settings" type="b">
+            <default>true</default>
+            <summary>Search Settings Category</summary>
+            <description>Include Settings category filter</description>
+        </key>
+
+        <key name="search-category-folders" type="b">
+            <default>true</default>
+            <summary>Search Folders Category</summary>
+            <description>Include Folders category filter</description>
+        </key>
+
+        <key name="search-category-web" type="b">
+            <default>false</default>
+            <summary>Search Web Category</summary>
+            <description>Include Web search category filter</description>
+        </key>
+
+    </schema>
+</schemalist>

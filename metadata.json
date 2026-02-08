@@ -1,0 +1,12 @@
+{
+    "name": "Winbar",
+    "description": "A modern taskbar for GNOME. Features centered app icons, system tray, search, widgets area, and full compatibility with ArcMenu.",
+    "uuid": "winbar@gnome-extension",
+    "version": 1,
+    "shell-version": ["48", "49"],
+    "settings-schema": "org.gnome.shell.extensions.winbar",
+    "url": "https://github.com/svenreimer/winbar",
+    "gettext-domain": "winbar",
+    "session-modes": ["user", "unlock-dialog"],
+    "donations": {}
+}
