@@ -1423,9 +1423,11 @@ export const Winbar = GObject.registerClass({
             windows.forEach(window => {
                 if (window.is_skip_taskbar()) return;
 
-                // Check if this window has an app
+                // Check if this window has a real app (not a fake window:X placeholder)
                 const app = Shell.WindowTracker.get_default().get_window_app(window);
-                if (app) return;  // Has app, handled by normal flow
+                const appId = app?.get_id() || 'null';
+                const isFakeApp = appId.startsWith('window:');
+                if (app && !isFakeApp) return;  // Has real app, handled by normal flow
 
                 // Check window type - only handle NORMAL windows
                 const windowType = window.get_window_type();
@@ -1456,14 +1458,18 @@ export const Winbar = GObject.registerClass({
                 if (wmClass) {
                     const wmClassLower = wmClass.toLowerCase();
 
-                    // 2. Filter Steam helper windows (steam_app_*, steam_apps_* - often tray icons or hidden helpers)
+                    // Small window check used for tray/helper detection
+                    const isSmall = frame.width < 300 && frame.height < 100;
+
+                    // 2. Filter small Steam helper/tray windows (not main app windows)
                     if (wmClassLower.startsWith('steam_app_') || wmClassLower.startsWith('steam_apps_')) {
-                        return true;
+                        if (isSmall) {
+                            return true;
+                        }
+                        return false;
                     }
 
                     // 3. Lutris/Wine tray windows logic
-                    // Lutris/Wine tray windows are typically very small
-                    const isSmall = frame.width < 300 && frame.height < 100;
                     if (isSmall) {
                         // Lutris tray indicator
                         if (wmClassLower.includes('lutris') &&
